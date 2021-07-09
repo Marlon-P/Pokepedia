@@ -1,6 +1,6 @@
 package com.example.pokepedia.pokemon_classes;
 
-public class Type {
+public class Move {
     private String name;
     private String url;
 

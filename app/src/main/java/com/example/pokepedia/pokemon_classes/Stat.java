@@ -1,7 +1,14 @@
 package com.example.pokepedia.pokemon_classes;
 
 public class Stat {
-    private int base_stat;
-    private int effort;
-    private NameUrl stats;
+    private String name;
+    private String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

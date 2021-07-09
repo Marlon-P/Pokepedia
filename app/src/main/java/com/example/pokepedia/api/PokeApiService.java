@@ -8,7 +8,7 @@ import retrofit2.http.Url;
 
 public interface PokeApiService {
 
-    @GET
+    @GET("bulbasaur")
     Call<Pokemon> getPokemon();
 
     @GET

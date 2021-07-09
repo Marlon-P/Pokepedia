@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pokepedia.api.PokeApiService;
-import com.example.pokepedia.api.PokePageResults;
+import com.example.pokepedia.pokemon_classes.Pokemon;
 import com.squareup.moshi.Moshi;
 
 import retrofit2.Call;
@@ -33,17 +33,17 @@ public class MainActivity extends AppCompatActivity {
         TextView txt = findViewById(R.id.textView);
 
         PokeApiService apiService = retrofit.create(PokeApiService.class);
-        Call<PokePageResults> results = apiService.getDefaultSearch("https://pokeapi.co/api/v2/pokemon/");
-        results.enqueue(new Callback<PokePageResults>() {
+        Call<Pokemon> results = apiService.getPokemon();
+        results.enqueue(new Callback<Pokemon>() {
             @Override
-            public void onResponse(@NonNull Call<PokePageResults> call, @NonNull Response<PokePageResults> response) {
+            public void onResponse(@NonNull Call<Pokemon> call, @NonNull Response<Pokemon> response) {
                 if (response.code() != 200) {
                     txt.setText(R.string.check_connection);
                     return;
                 }
 
-                String json;
-                PokePageResults r = response.body();
+
+                Pokemon r = response.body();
                 assert r != null;
 
 
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             @Override
-            public void onFailure(@NonNull Call<PokePageResults> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<Pokemon> call, @NonNull Throwable t) {
 
             }
         });

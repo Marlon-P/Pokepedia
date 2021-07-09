@@ -12,6 +12,18 @@ public class PokePageResults {
     private String previous;
     private List<NameUrl> results;
 
+    public String getNext() {
+        return next;
+    }
+
+    public String getPrevious() {
+        return previous;
+    }
+
+    public List<NameUrl> getResults() {
+        return results;
+    }
+
     @NonNull
     @Override
     public String toString() {
