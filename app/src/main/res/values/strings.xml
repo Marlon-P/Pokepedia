@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Pokepedia</string>
     <string name="check_connection">Check connection</string>
+    <string name="bulbasaur">Bulbasaur</string>
+
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="saved_pokemon">Saved Pokemon</string>
+    <string name="open_nav_drawer">Open Nav Drawer</string>
+    <string name="close_nav_drawer">Close Nav Drawer</string>
+    <string name="pokeball">pokeball</string>
 </resources>

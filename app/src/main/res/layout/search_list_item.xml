@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:src="@drawable/red_poke_ball"
+        android:contentDescription="@string/pokeball">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/list_item_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/bulbasaur"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:textSize="30sp"
+        >
+    </TextView>
+</androidx.appcompat.widget.LinearLayoutCompat>
