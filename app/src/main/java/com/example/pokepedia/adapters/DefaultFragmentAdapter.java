@@ -1,12 +1,14 @@
 package com.example.pokepedia.adapters;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pokepedia.R;
@@ -32,7 +34,6 @@ public class DefaultFragmentAdapter extends RecyclerView.Adapter<DefaultFragment
     @Override
     public DefaultFragmentAdapter.ViewHolder onCreateViewHolder(@NonNull @org.jetbrains.annotations.NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_list_item, parent, false);
-
         return new ViewHolder(view);
     }
 
@@ -40,7 +41,13 @@ public class DefaultFragmentAdapter extends RecyclerView.Adapter<DefaultFragment
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull DefaultFragmentAdapter.ViewHolder holder, int position) {
         NameUrl nameUrl = data.get(position);
         holder.pokemonName.setText(nameUrl.getName());
-        holder.itemView.setOnClickListener(v -> Toast.makeText(v.getContext(), "Loading Pokemon info", Toast.LENGTH_SHORT).show());
+        holder.itemView.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("pokemonName", nameUrl.getName());
+            NavController navController = Navigation.findNavController(holder.itemView);
+                navController.navigate(R.id.pokemonInfo, bundle);
+            }
+        );
     }
 
     @Override

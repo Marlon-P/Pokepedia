@@ -53,7 +53,6 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.search) {
-
             return true;
         }
 

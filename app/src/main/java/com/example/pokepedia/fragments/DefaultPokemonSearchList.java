@@ -12,12 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pokepedia.R;
 import com.example.pokepedia.adapters.DefaultFragmentAdapter;
-import com.example.pokepedia.api.DefaultSearchListViewModel;
+import com.example.pokepedia.dialogs.LoadingDialog;
+import com.example.pokepedia.viewModels.DefaultSearchListViewModel;
 
 
 public class DefaultPokemonSearchList extends Fragment {
 
     private DefaultSearchListViewModel viewModel;
+    private LoadingDialog dialog;
 
 
     @Override
@@ -30,6 +32,7 @@ public class DefaultPokemonSearchList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        dialog = new LoadingDialog(getActivity());
         View v = inflater.inflate(R.layout.fragment_default_pokemon_search_list, container, false);
 
         initRecyclerView(v);
@@ -48,7 +51,17 @@ public class DefaultPokemonSearchList extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(llm);
 
+
         viewModel = new ViewModelProvider(this).get(DefaultSearchListViewModel.class);
+
+        viewModel.isLoading.observe(getViewLifecycleOwner(), loading -> {
+            if (loading != null) {
+                if(loading) {
+                    dialog.startLoadingDialog();
+                }
+            }
+        });
+
         viewModel.get_results().observe(getViewLifecycleOwner(), result ->
                 adapter.setData(result.getNameUrls())
         );

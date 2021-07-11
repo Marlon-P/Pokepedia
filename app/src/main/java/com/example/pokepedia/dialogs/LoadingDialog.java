@@ -1,0 +1,44 @@
+package com.example.pokepedia.dialogs;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.os.Handler;
+import android.view.View;
+
+import com.example.pokepedia.R;
+
+public class LoadingDialog {
+
+    private Activity activity;
+    private Dialog dialog;
+
+
+    public LoadingDialog(Activity activity) {
+        this.activity = activity;
+    }
+
+    public void startLoadingDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setView(View.inflate(activity.getApplicationContext(), R.layout.loading_screen,
+                activity.findViewById(R.id.progress_bar_root)));
+        builder.setCancelable(false);
+
+        dialog = builder.create();
+        dialog.show();
+
+        // Hide after some seconds
+        final Handler handler  = new Handler();
+        final Runnable runnable = () -> {
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        };
+
+        dialog.setOnDismissListener(dialog -> handler.removeCallbacks(runnable));
+        handler.postDelayed(runnable, 1000);
+    }
+
+
+
+}
