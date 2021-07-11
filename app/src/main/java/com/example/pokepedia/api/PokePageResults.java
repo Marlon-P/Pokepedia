@@ -20,7 +20,7 @@ public class PokePageResults {
         return previous;
     }
 
-    public List<NameUrl> getResults() {
+    public List<NameUrl> getNameUrls() {
         return results;
     }
 

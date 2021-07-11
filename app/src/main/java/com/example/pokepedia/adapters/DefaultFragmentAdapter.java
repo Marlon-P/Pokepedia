@@ -24,6 +24,7 @@ public class DefaultFragmentAdapter extends RecyclerView.Adapter<DefaultFragment
 
     public void setData(List<NameUrl> data) {
         this.data = data;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -38,18 +39,17 @@ public class DefaultFragmentAdapter extends RecyclerView.Adapter<DefaultFragment
     @Override
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull DefaultFragmentAdapter.ViewHolder holder, int position) {
         NameUrl nameUrl = data.get(position);
-
         holder.pokemonName.setText(nameUrl.getName());
         holder.itemView.setOnClickListener(v -> Toast.makeText(v.getContext(), "Loading Pokemon info", Toast.LENGTH_SHORT).show());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView pokemonName;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        private final TextView pokemonName;
 
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);

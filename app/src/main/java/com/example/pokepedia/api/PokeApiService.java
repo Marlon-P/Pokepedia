@@ -12,5 +12,6 @@ public interface PokeApiService {
     Call<Pokemon> getPokemon();
 
     @GET
-    Call<PokePageResults> getDefaultSearch(@Url String url);
+    Call<PokePageResults> getPagedSearch(@Url String url);
+
 }
