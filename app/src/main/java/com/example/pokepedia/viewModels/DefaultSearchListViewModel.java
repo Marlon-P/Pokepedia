@@ -23,6 +23,7 @@ public class DefaultSearchListViewModel extends ViewModel {
     private PokeApiService service;
     public MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
 
+
     public DefaultSearchListViewModel() {
         service = PokeApiServiceGenerator.createService(PokeApiService.class);
         getDefaultSearchList();

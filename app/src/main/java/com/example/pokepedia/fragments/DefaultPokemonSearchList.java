@@ -20,6 +20,7 @@ public class DefaultPokemonSearchList extends Fragment {
 
     private DefaultSearchListViewModel viewModel;
     private LoadingDialog dialog;
+    private boolean loading = true;
 
 
     @Override
@@ -54,16 +55,19 @@ public class DefaultPokemonSearchList extends Fragment {
 
         viewModel = new ViewModelProvider(this).get(DefaultSearchListViewModel.class);
 
-        viewModel.isLoading.observe(getViewLifecycleOwner(), loading -> {
-            if (loading != null) {
-                if(loading) {
-                    dialog.startLoadingDialog();
-                }
-            }
-        });
+        if(loading) {
+            dialog.startLoadingDialog();
+        }
 
         viewModel.get_results().observe(getViewLifecycleOwner(), result ->
-                adapter.setData(result.getNameUrls())
+                {
+                    adapter.setData(result.getNameUrls());
+                    if (loading) {
+                        loading = false;
+                        dialog.dismiss();
+                    }
+                }
+
         );
 
     }
