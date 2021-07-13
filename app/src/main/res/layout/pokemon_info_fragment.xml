@@ -10,7 +10,7 @@
         android:id="@+id/rootCardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="@color/teal_700">
+        tools:cardBackgroundColor="@color/teal_700">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -25,10 +25,11 @@
                     android:id="@+id/pokeNameImgCardView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/teal_200"
+                    tools:cardBackgroundColor="@color/teal_200"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    app:cardCornerRadius="35dp">
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="@dimen/outerCardRadius">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
@@ -40,7 +41,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
-                            app:cardCornerRadius="30dp">
+                            app:cardCornerRadius="@dimen/innerCardRadius">
 
                             <TextView
                                 android:id="@+id/pokemonName"
@@ -58,7 +59,7 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:cardCornerRadius="30dp">
+                            app:cardCornerRadius="@dimen/innerCardRadius">
 
                             <ImageView
                                 android:id="@+id/pokemonImage"
@@ -79,8 +80,8 @@
                     android:id="@+id/typesCardView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="35dp"
-                    android:backgroundTint="@color/teal_200"
+                    app:cardCornerRadius="@dimen/outerCardRadius"
+                    tools:cardBackgroundColor="@color/teal_200"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp">
@@ -104,7 +105,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            app:cardCornerRadius="35dp">
+                            app:cardCornerRadius="@dimen/outerCardRadius">
 
 
 
@@ -119,8 +120,8 @@
                     android:id="@+id/heightCardView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="35dp"
-                    android:backgroundTint="@color/teal_200"
+                    app:cardCornerRadius="@dimen/outerCardRadius"
+                    tools:cardBackgroundColor="@color/teal_200"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp">
@@ -144,7 +145,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            app:cardCornerRadius="35dp">
+                            app:cardCornerRadius="@dimen/outerCardRadius">
 
                             <TextView
                                 android:id="@+id/height_m"
@@ -167,8 +168,8 @@
                     android:id="@+id/weightCardView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="35dp"
-                    android:backgroundTint="@color/teal_200"
+                    app:cardCornerRadius="@dimen/outerCardRadius"
+                    tools:cardBackgroundColor="@color/teal_200"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp">
@@ -192,7 +193,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            app:cardCornerRadius="35dp">
+                            app:cardCornerRadius="@dimen/outerCardRadius">
 
                             <TextView
                                 android:id="@+id/weight_kg"
@@ -212,10 +213,11 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/statsCardView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="35dp"
-                    android:backgroundTint="@color/teal_200"
+                    tools:cardBackgroundColor="@color/teal_200"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp">
@@ -239,7 +241,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            app:cardCornerRadius="35dp">
+                            app:cardCornerRadius="@dimen/outerCardRadius">
 
 
 

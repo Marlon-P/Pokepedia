@@ -10,4 +10,63 @@
     <color name="green_200">#bdf478</color>
     <color name="green_500">#8ac148</color>
     <color name="green_700">#599014</color>
+
+
+
+    <color name="bugPrimary">#6D7815</color>
+    <color name="bugSecondary">#C6D16E</color>
+
+    <color name="darkPrimary">#49392F</color>
+    <color name="darkSecondary">#705848</color>
+
+    <color name="dragonPrimary">#7038F8</color>
+    <color name="dragonSecondary">#6D5E9C</color>
+
+    <color name="electricPrimary">#fabd23</color>
+    <color name="electricSecondary">#F8D030</color>
+
+    <color name="fairyPrimary">#EE99AC</color>
+    <color name="fairySecondary">#F4BDC9</color>
+
+    <color name="fightingPrimary">#C03028</color>
+    <color name="fightingSecondary">#D67873</color>
+
+    <color name="firePrimary">#F08030</color>
+    <color name="fireSecondary">#f5ac78</color>
+
+    <color name="flyingPrimary">#A890F0</color>
+    <color name="flyingSecondary">#C6B7F5</color>
+
+    <color name="ghostPrimary">#705898</color>
+    <color name="ghostSecondary">#A292BC</color>
+
+    <color name="grassPrimary">#78C850</color>
+    <color name="grassSecondary">#A7DB8D</color>
+
+    <color name="groundPrimary">#E0C068</color>
+    <color name="groundSecondary">#EBD69D</color>
+
+
+    <color name="icePrimary">#98D8D8</color>
+    <color name="iceSecondary">#BCE6E6</color>
+
+    <color name="normalPrimary">#A8A878</color>
+    <color name="normalSecondary">#C6C6A7</color>
+
+    <color name="poisonPrimary">#A040A0</color>
+    <color name="poisonSecondary">#C183C1</color>
+
+    <color name="psychicPrimary">#F85888</color>
+    <color name="psychicSecondary">#FA92B2</color>
+
+    <color name="rockPrimary">#B8A038</color>
+    <color name="rockSecondary">#D1C17D</color>
+
+    <color name="steelPrimary">#B8B8D0</color>
+    <color name="steelSecondary">#D1D1E0</color>
+
+    <color name="waterPrimary">#6890F0</color>
+    <color name="waterSecondary">#9DB7F5</color>
+
+
 </resources>
