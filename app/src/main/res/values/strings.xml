@@ -15,4 +15,8 @@
     <string name="height">Height</string>
     <string name="weight">Weight</string>
 
+
+    <string name="weightKG">%1$.1f kg</string>
+    <string name="heightM">%1$.1f m</string>
+    <string name="stats">Stats</string>
 </resources>

@@ -3,7 +3,6 @@ package com.example.pokepedia.dialogs;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.os.Handler;
 import android.view.View;
 
 import com.example.pokepedia.R;
@@ -26,17 +25,6 @@ public class LoadingDialog {
 
         dialog = builder.create();
         dialog.show();
-
-        // Hide after some seconds
-        final Handler handler  = new Handler();
-        final Runnable runnable = () -> {
-            if (dialog.isShowing()) {
-                dialog.dismiss();
-            }
-        };
-
-        dialog.setOnDismissListener(dialog -> handler.removeCallbacks(runnable));
-        handler.postDelayed(runnable, 1000);
     }
 
 

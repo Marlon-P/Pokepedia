@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.Navigation;
 
 import com.example.pokepedia.databinding.ActivitySearchBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -39,6 +40,7 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, binding.drawerLayout, binding.toolbar,
                 R.string.open_nav_drawer, R.string.close_nav_drawer);
         binding.drawerLayout.addDrawerListener(toggle);
+        binding.toolbar.setOnClickListener(v -> Navigation.findNavController(binding.myNavHostFragment).navigate(R.id.defaultPokemonSearchList));
     }
 
     @Override

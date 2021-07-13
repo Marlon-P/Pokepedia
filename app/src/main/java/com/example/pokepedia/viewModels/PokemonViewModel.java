@@ -19,16 +19,19 @@ public class PokemonViewModel extends ViewModel {
     private MutableLiveData<Pokemon> _result = new MutableLiveData<>();
     private PokeApiService service;
 
+
     public PokemonViewModel() {
         service = PokeApiServiceGenerator.createService(PokeApiService.class);
     }
 
     public void getPokemon(String pokemonName) {
         Call<Pokemon> pokemon = service.getPokemon(pokemonName);
+
         pokemon.enqueue(new Callback<Pokemon>() {
             @Override
             public void onResponse(@NotNull Call<Pokemon> call, @NotNull Response<Pokemon> response) {
                 _result.setValue(response.body());
+
             }
 
             @Override
