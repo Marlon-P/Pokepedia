@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -36,14 +37,14 @@ public class DefaultPokemonSearchList extends Fragment {
         dialog = new LoadingDialog(getActivity());
         View v = inflater.inflate(R.layout.fragment_default_pokemon_search_list, container, false);
 
-        initRecyclerView(v);
+        init(v);
         return v;
     }
 
 
 
 
-    private void initRecyclerView(View v) {
+    private void init(View v) {
         RecyclerView rv = v.findViewById(R.id.defaultSearchRV);
         DefaultFragmentAdapter adapter = new DefaultFragmentAdapter();
 
@@ -52,9 +53,16 @@ public class DefaultPokemonSearchList extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(llm);
 
+        RecyclerView.ItemDecoration decoration = new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL);
+        rv.addItemDecoration(decoration);
 
         viewModel = new ViewModelProvider(this).get(DefaultSearchListViewModel.class);
 
+        loadData(adapter);
+
+    }
+
+    private void loadData(DefaultFragmentAdapter adapter) {
         if(loading) {
             dialog.startLoadingDialog();
         }
@@ -69,6 +77,5 @@ public class DefaultPokemonSearchList extends Fragment {
                 }
 
         );
-
     }
 }

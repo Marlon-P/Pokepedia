@@ -35,6 +35,7 @@
             app:menu="@menu/action_bar_menu"
             android:elevation="4dp"
             app:title="@string/app_name"
+            android:theme="@style/ToolbarTheme"
             app:navigationIcon="@drawable/menu"/>
 
         <androidx.fragment.app.FragmentContainerView

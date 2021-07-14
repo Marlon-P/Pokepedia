@@ -13,4 +13,17 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+
+        <!-- Close button icon -->
+        <item name="closeIcon">@drawable/ic_baseline_close_24</item>
+        <!-- Search button icon -->
+        <item name="searchIcon">@drawable/search_icon</item>
+
+    </style>
 </resources>

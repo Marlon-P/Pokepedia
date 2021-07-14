@@ -1,17 +1,16 @@
 package com.example.pokepedia.adapters;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pokepedia.R;
+import com.example.pokepedia.activities.SearchableActivity;
 import com.example.pokepedia.pokemon_classes.NameUrl;
 
 import org.jetbrains.annotations.NotNull;
@@ -42,10 +41,9 @@ public class DefaultFragmentAdapter extends RecyclerView.Adapter<DefaultFragment
         NameUrl nameUrl = data.get(position);
         holder.pokemonName.setText(nameUrl.getName());
         holder.itemView.setOnClickListener(v -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("pokemonName", nameUrl.getName());
-            NavController navController = Navigation.findNavController(holder.itemView);
-                navController.navigate(R.id.pokemonInfo, bundle);
+                Intent intent = new Intent(v.getContext(), SearchableActivity.class);
+                intent.putExtra("pokemonName", nameUrl.getName());
+                v.getContext().startActivity(intent);
             }
         );
     }

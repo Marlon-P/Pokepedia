@@ -9,17 +9,5 @@
         android:id="@+id/defaultPokemonSearchList"
         android:name="com.example.pokepedia.fragments.DefaultPokemonSearchList"
         android:label="fragment_default_pokemon_search_list"
-        tools:layout="@layout/fragment_default_pokemon_search_list" >
-        <action
-            android:id="@+id/action_defaultPokemonSearchList_to_pokemonInfo"
-            app:destination="@id/pokemonInfo">
-        </action>
-
-
-    </fragment>
-    <fragment
-        android:id="@+id/pokemonInfo"
-        android:name="com.example.pokepedia.fragments.PokemonInfo"
-        android:label="pokemon_info_fragment"
-        tools:layout="@layout/pokemon_info_fragment" />
+        tools:layout="@layout/fragment_default_pokemon_search_list" />
 </navigation>

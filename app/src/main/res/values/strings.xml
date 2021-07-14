@@ -19,4 +19,6 @@
     <string name="weightKG">%1$.1f kg</string>
     <string name="heightM">%1$.1f m</string>
     <string name="stats">Stats</string>
+    <string name="search_pokemon">Search Pokemon…</string>
+    <string name="pokemon_not_found">Pokemon Not Found</string>
 </resources>

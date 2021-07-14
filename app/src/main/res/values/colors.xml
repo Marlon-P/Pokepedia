@@ -20,7 +20,7 @@
     <color name="darkSecondary">#705848</color>
 
     <color name="dragonPrimary">#7038F8</color>
-    <color name="dragonSecondary">#6D5E9C</color>
+    <color name="dragonSecondary">#A27DFA</color>
 
     <color name="electricPrimary">#fabd23</color>
     <color name="electricSecondary">#F8D030</color>
@@ -68,5 +68,6 @@
     <color name="waterPrimary">#6890F0</color>
     <color name="waterSecondary">#9DB7F5</color>
 
-
+    <color name="offWhite">#f8f8ff</color>
+    <color name="grey">#808080</color>
 </resources>
